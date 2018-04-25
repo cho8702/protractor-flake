@@ -5,7 +5,7 @@ export default {
     let match = null
     let failedSpecs = new Set()
     let testsOutput = output.split('------------------------------------')
-    let RESULT_REG = /,\s0 failures/g
+    let RESULT_REG = /\sSUCCESS\s/g
     let SPECFILE_REG = /.+Specs:\s(.*\.(js|coffee))/g
     testsOutput.forEach(function (test) {
       let specfile
@@ -14,7 +14,7 @@ export default {
       while (match = SPECFILE_REG.exec(test)) { // eslint-disable-line no-cond-assign
         specfile = match[1]
       }
-      // check for string '0 failures' and then marks the test as passed
+      // check for string ' SUCCESS ' and then marks the test as passed
       while (match = RESULT_REG.exec(test)) { // eslint-disable-line no-cond-assign
         result = 'passed'
       }
