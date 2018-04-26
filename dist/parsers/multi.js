@@ -22,11 +22,14 @@ exports['default'] = {
       while (match = SPECFILE_REG.exec(test)) {
         // eslint-disable-line no-cond-assign
         specfile = match[1];
+        console.log('Spec file: ' + specfile);
       }
       // check for string ' SUCCESS ' and then marks the test as passed
       while (match = RESULT_REG.exec(test)) {
         // eslint-disable-line no-cond-assign
         result = 'passed';
+        console.log('Test: ' + test);
+        console.log('Match: ' + match);
       }
       if (specfile && result === 'failed') {
         if (!/node_modules/.test(specfile)) {
