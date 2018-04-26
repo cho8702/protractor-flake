@@ -19,6 +19,7 @@ exports['default'] = {
       var specfile = undefined;
       var result = 'failed';
       // retrieve specfile from run
+      console.log('Test: ' + test);
       while (match = SPECFILE_REG.exec(test)) {
         // eslint-disable-line no-cond-assign
         specfile = match[1];
@@ -28,7 +29,6 @@ exports['default'] = {
       while (match = RESULT_REG.exec(test)) {
         // eslint-disable-line no-cond-assign
         result = 'passed';
-        console.log('Test: ' + test);
         console.log('Match: ' + match);
       }
       if (specfile && result === 'failed') {
