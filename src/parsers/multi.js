@@ -5,7 +5,7 @@ export default {
     let match = null
     let failedSpecs = new Set()
     let testsOutput = output.split('------------------------------------')
-    let RESULT_REG = /\sSUCCESS\s/g
+    let RESULT_REG = /SUCCESS/g
     let SPECFILE_REG = /.+Specs:\s(.*\.(js|coffee))/g
     testsOutput.forEach(function (test) {
       let specfile

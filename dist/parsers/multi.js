@@ -13,7 +13,7 @@ exports['default'] = {
     var match = null;
     var failedSpecs = new Set();
     var testsOutput = output.split('------------------------------------');
-    var RESULT_REG = /\sSUCCESS\s/g;
+    var RESULT_REG = /SUCCESS/g;
     var SPECFILE_REG = /.+Specs:\s(.*\.(js|coffee))/g;
     testsOutput.forEach(function (test) {
       var specfile = undefined;
